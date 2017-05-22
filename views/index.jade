@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div.container-fluid
+        div.panel.panel-primary(ng-show="loading" ng-controller="deviceController")
+            div.panel-heading Devices : {{devices.length}}
+            div.panel-body
+                div(ng-repeat="device in devices") 
+                    p Id Device : {{device.idDevice}} || Mac Adresse : {{device.macAdresse}}
+        div.panel.panel-primary(ng-show="loading" ng-controller="paramIncidentsController")
+            div.panel-heading Param Incidents : {{paramIncidents.length}}
+            div.panel-body
+                div(ng-repeat="param in paramIncidents") 
+                    p Label : {{param.label}} || Code Incident : {{param.codeincident}} || Message PMR : {{param.messagePmr}}
